@@ -1,0 +1,7 @@
+import("stdfaust.lib");
+
+//process = synreson(fr,amp);
+
+synreson(f,a) = no.noise*0.1 :> fil : ef.cubicnl(0,0) with{
+    fil = fi.resonbp(f,70,a):fi.resonhp(f,3,1);
+}; 
